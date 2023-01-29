@@ -1,4 +1,3 @@
-# FuckOff
 To prevent use of your private API, this gem allow you to mark methods as being `fucking_private` and/or `fucking_final`.
 
 ```ruby
@@ -13,47 +12,22 @@ class Example
     "Bar"
   end
 end
+```
 
+If you try to call a `fucking_private` method anyway, it will raise a `NoMethodError`.
+
+```ruby
 Example.new.send(:foo) # raises a FuckOff::NoMethodError
+```
+
+If you try to redefine a `fucking_final` method, it will raise a `NameError`.
+
+```ruby
 Example.define_method(:bar) { "New bar" } # raises a FuckOff::NameError
 ```
 
 Yes, this is a joke. But it also kind of works.
 
-## Installation
+## Prior art
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'fuck_off'
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install fuck_off
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/fuck_off. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/fuck_off/blob/master/CODE_OF_CONDUCT.md).
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the FuckOff project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/fuck_off/blob/master/CODE_OF_CONDUCT.md).
+[I told you it was private](https://github.com/fxn/i-told-you-it-was-privat)
