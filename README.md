@@ -30,4 +30,4 @@ Yes, this is a joke. But it also kind of works.
 
 ## Prior art
 
-[I told you it was private](https://github.com/fxn/i-told-you-it-was-privat)
+[I told you it was private](https://github.com/fxn/i-told-you-it-was-private)
