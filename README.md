@@ -1,4 +1,6 @@
 # FuckOff
+To prevent use of your private API, this gem allow you to mark methods as being `fucking_private` and/or `fucking_final`.
+
 ```ruby
 class Example
   include FuckOff
@@ -15,6 +17,8 @@ end
 Example.new.send(:foo) # raises a FuckOff::NoMethodError
 Example.define_method(:bar) { "New bar" } # raises a FuckOff::NameError
 ```
+
+Yes, this is a joke. But it also kind of works.
 
 ## Installation
 
