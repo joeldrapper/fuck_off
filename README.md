@@ -26,7 +26,7 @@ If you try to redefine a `fucking_final` method, it will raise a `NameError`.
 Example.define_method(:bar) { "New bar" } # raises a FuckOff::NameError
 ```
 
-Yes, this is a joke. But it also kind of works.
+Yes, this is a joke. But it also kind of [works](https://github.com/joeldrapper/fuck_off/blob/main/test/fuck_off_test.rb).
 
 ## Prior art
 
