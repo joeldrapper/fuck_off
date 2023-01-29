@@ -11,8 +11,20 @@ module FuckOff
     def fucking_private_methods
       if defined? @fucking_private_methods
         @fucking_private_methods
+      elsif superclass.respond_to? :fucking_private_methods
+        @fucking_private_methods = superclass.fucking_private_methods
       else
         @fucking_private_methods = {}
+      end
+    end
+
+    def fucking_final_methods
+      if defined? @fucking_final_methods
+        @fucking_final_methods
+      elsif superclass.respond_to? :fucking_final_methods
+        @fucking_final_methods = superclass.fucking_final_methods
+      else
+        @fucking_final_methods = {}
       end
     end
 
@@ -23,13 +35,13 @@ module FuckOff
     end
 
     def fucking_final(method_name)
-      (@@fucking_final_methods ||= {})[method_name] = true
+      fucking_final_methods[method_name] = true
       method_name
     end
 
     def method_added(method_name)
-      if (@@fucking_final_methods ||= {})[method_name]
-        raise FuckOff::NameError, "Fuck you"
+      if fucking_final_methods[method_name]
+        raise FuckOff::NameError, "Fuck you!"
       else
         super
       end
